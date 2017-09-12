@@ -1,0 +1,7 @@
+<routes>
+    <post>
+        <testapi></testapi>      
+    </post>
+    <get>        
+    </get>
+</routes>
