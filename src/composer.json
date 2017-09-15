@@ -7,6 +7,32 @@
         "illuminate/container": "^5.5",
         "illuminate/events": "^5.5",
         "illuminate/database": "^5.5",
-        "sendotp/sendotp": "^1.0"
+        "sendotp/sendotp": "^1.0",
+        "sebastian/version": "^2.0",
+        "sebastian/global-state": "^2.0",
+        "doctrine/instantiator": "^1.0",
+        "phpunit/php-text-template": "^1.2",
+        "phpunit/phpunit-mock-objects": "^4.0",
+        "phpunit/php-code-coverage": "^5.2",
+        "symfony/yaml": "^3.3",
+        "sebastian/comparator": "^2.0",
+        "phpunit/php-timer": "^1.0",
+        "webmozart/assert": "^1.2",
+        "phpdocumentor/reflection-common": "^1.0",
+        "phpdocumentor/type-resolver": "^0.4.0",
+        "phpdocumentor/reflection-docblock": "^4.1",
+        "phpspec/prophecy": "^1.7",
+        "mongodb/mongodb": "^1.1",
+        "paragonie/random_compat": "^2.0",
+        "jenssegers/mongodb": "^3.2",
+        "symfony/http-foundation": "^3.3",
+        "giggsey/locale": "^1.3",
+        "giggsey/libphonenumber-for-php": "^8.8",
+        "guzzlehttp/promises": "^1.3"
+    },
+    "autoload": {
+        "classmap": [
+            "application"
+        ]
     }
 }
