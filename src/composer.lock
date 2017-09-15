@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9baae9cac3b4193615a60aeee8dd0a60",
-    "content-hash": "1d960514fd1a923ade6e10f423434353",
+    "hash": "bcf64f9949a3ecda10f1dc0f311c211d",
+    "content-hash": "0dfc4bdb443ca1ad1100981590668cb4",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -646,6 +646,35 @@
                 "simple-cache"
             ],
             "time": "2017-01-02 13:31:39"
+        },
+        {
+            "name": "sendotp/sendotp",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MSG91/sendotp-php.git",
+                "reference": "b1c9ecb366104451d8f5a16bfdd46cf1b29a844a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MSG91/sendotp-php/zipball/b1c9ecb366104451d8f5a16bfdd46cf1b29a844a",
+                "reference": "b1c9ecb366104451d8f5a16bfdd46cf1b29a844a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "sendotp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Rahul Chordiya",
+                    "email": "rahul@walkover.in"
+                }
+            ],
+            "time": "2017-04-13 05:59:54"
         },
         {
             "name": "slim/slim",

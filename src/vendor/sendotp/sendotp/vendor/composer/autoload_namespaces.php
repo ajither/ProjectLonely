@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'sendotp\\' => array($vendorDir . '/sendotp/sendotp/src'),
-    'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'sendotp\\' => array($baseDir . '/src'),
 );

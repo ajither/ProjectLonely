@@ -117,6 +117,13 @@ class ComposerStaticInit88662d41dce6db98bbd3152ec564e587
     );
 
     public static $prefixesPsr0 = array (
+        's' => 
+        array (
+            'sendotp\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/sendotp/sendotp/src',
+            ),
+        ),
         'P' => 
         array (
             'Pimple' => 
