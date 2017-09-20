@@ -10,6 +10,7 @@
 use \library\PXL\Otp\OtpManager as OtpManager;
 use library\PXL\Common\Validations as Validations;
 use \library\PXL\SignUp\SignupManager as SignupManager;
+use \library\PXL\Login\LoginManager as LoginManager;
 
 class ApiController {
 
@@ -45,6 +46,22 @@ class ApiController {
             return json_encode($result['body'], JSON_NUMERIC_CHECK);
         }
         return OtpManager::sendOtpToClient($payload);
+    }
+
+    /**
+     * @author     Ajith E R, <hello@trycatchajith.com>
+     * @date       September 20, 2017
+     * @brief      Login Api.                               
+     * @return     JSON response.
+     */
+    public function login($request) {
+        $payload = $request->getParsedBody();
+        $expectedFields = ["user_mobile"];
+        $result = Validations::validateMandatoryFields($expectedFields, $payload);
+        if (!$result['status']) {
+            return json_encode($result['body'], JSON_NUMERIC_CHECK);
+        }
+        return LoginManager::userLogin($payload);
     }
 
     /**

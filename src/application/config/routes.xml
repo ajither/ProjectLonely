@@ -1,7 +1,8 @@
 <routes>
     <post>
         <signup></signup> 
-        <sendotp></sendotp>     
+        <sendotp></sendotp> 
+        <login></login>    
     </post>
     <get>        
     </get>
