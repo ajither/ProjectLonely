@@ -9,6 +9,7 @@
  */
 use \library\PXL\Otp\OtpManager as OtpManager;
 use library\PXL\Common\Validations as Validations;
+use \library\PXL\SignUp\SignupManager as SignupManager;
 
 class ApiController {
 
@@ -20,7 +21,12 @@ class ApiController {
      */
     public function signUp($request) {
         $payload = $request->getParsedBody();
-        echo 'Hello World!';
+        $expectedFields = ["user_mobile", "user_sex", "user_dob", "user_location", "user_address", "user_sex_interested", "user_sex_min", "user_sex_max"];
+        $result = Validations::validateMandatoryFields($expectedFields, $payload);
+        if (!$result['status']) {
+            return json_encode($result['body'], JSON_NUMERIC_CHECK);
+        }
+        return SignupManager::userSignup($payload);
     }
 
     /**
