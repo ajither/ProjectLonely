@@ -6,7 +6,6 @@
  * @brief      All Bootstrap Activities
  * @details    
  */
-
 session_cache_limiter(false);
 session_save_path('/tmp');
 session_start();
@@ -15,6 +14,7 @@ define('INC_ROOT', dirname(__DIR__));
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+use \library\PXL\Token\TokenManager as TokenManager;
 
 require INC_ROOT . '/vendor/autoload.php';
 
@@ -41,11 +41,33 @@ $app->post('/{version}/{apiname}', function (Request $request, Response $respons
     $serevrParams = $request->getServerParams();
     $_SESSION['ip_address'] = $serevrParams['REMOTE_ADDR'];
     $apiname = $request->getAttribute('apiname');
-    return $GLOBALS[$request->getAttribute('version')]->$apiname($request);
+    try {
+        if (!TokenManager::validateTokens($request)) {
+            return $GLOBALS[$request->getAttribute('version')]->error(401);
+        }
+        if (array_key_exists($request->getAttribute('apiname'), $GLOBALS["routes"]["post"])) {
+            return $GLOBALS[$request->getAttribute('version')]->$apiname($request);
+        } else {
+            return $GLOBALS[$request->getAttribute('version')]->error(404);
+        }
+    } catch (Exception $e) {
+        
+    }
 });
 
 $app->get('/{version}/{apiname}', function (Request $request, Response $response) {
     $_SESSION['api_version'] = $request->getAttribute('version');
     $apiname = $request->getAttribute('apiname');
-    return $GLOBALS[$request->getAttribute('version')]->$apiname($request);
+    try {
+        if (!TokenManager::validateTokens($request)) {
+            return $GLOBALS[$request->getAttribute('version')]->error(401);
+        }
+        if (array_key_exists($request->getAttribute('apiname'), $GLOBALS["routes"]["get"])) {
+            return $GLOBALS[$request->getAttribute('version')]->$apiname($request);
+        } else {
+            return $GLOBALS[$request->getAttribute('version')]->error(404);
+        }
+    } catch (Exception $e) {
+        
+    }
 });

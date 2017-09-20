@@ -1,6 +1,7 @@
 <routes>
     <post>
-        <testapi></testapi>      
+        <signup></signup> 
+        <sendotp></sendotp>     
     </post>
     <get>        
     </get>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "670f8af7c347bcc96022e9436eacab2f",
+    "hash": "925de9cb38e265defe15fdbd9a23205c",
     "content-hash": "8a1a1a61a95cc202dbc35a9df4df1b4a",
     "packages": [
         {
@@ -578,16 +578,16 @@
         },
         {
             "name": "jenssegers/mongodb",
-            "version": "v3.2.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/laravel-mongodb.git",
-                "reference": "1358e50428bc0aeea6d3e13717104d6d9b313887"
+                "reference": "c0cae3e187999ea80f92cc5ab169de4baa784f2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/1358e50428bc0aeea6d3e13717104d6d9b313887",
-                "reference": "1358e50428bc0aeea6d3e13717104d6d9b313887",
+                "url": "https://api.github.com/repos/jenssegers/laravel-mongodb/zipball/c0cae3e187999ea80f92cc5ab169de4baa784f2e",
+                "reference": "c0cae3e187999ea80f92cc5ab169de4baa784f2e",
                 "shasum": ""
             },
             "require": {
@@ -608,10 +608,17 @@
                 "jenssegers/mongodb-session": "Add MongoDB session support to Laravel-MongoDB"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jenssegers\\Mongodb\\MongodbServiceProvider",
+                        "Jenssegers\\Mongodb\\MongodbQueueServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Jenssegers\\Mongodb": "src/",
-                    "Jenssegers\\Eloquent": "src/"
+                    "Jenssegers\\Mongodb": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -635,7 +642,7 @@
                 "mongo",
                 "mongodb"
             ],
-            "time": "2017-03-12 09:23:10"
+            "time": "2017-09-05 11:17:05"
         },
         {
             "name": "mongodb/mongodb",
@@ -2193,7 +2200,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.3.8",
+            "version": "v3.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
