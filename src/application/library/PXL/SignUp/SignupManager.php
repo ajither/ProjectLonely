@@ -27,6 +27,7 @@ class SignupManager {
         $user_id = $userModel->addUser($user);
 
         $userProfile['user_id'] = $user_id;
+        $userProfile['user_name'] = $payload['user_name'];
         $userProfile['user_sex'] = $payload['user_sex'];
         $userProfile['user_dob'] = $payload['user_dob'];
         $userProfile['user_location'] = $payload['user_location'];
